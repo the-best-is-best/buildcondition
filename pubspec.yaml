@@ -1,6 +1,6 @@
 name: buildcondition
-description: A new Flutter package project.
-version: 0.0.1
+description: description:Synchronous conditional widget renderer.
+version: 1.0.0
 homepage: https://github.com/the-best-is-best/buildcondition
 
 environment:
