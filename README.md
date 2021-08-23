@@ -1,14 +1,36 @@
-# buildcondition
+# BuildCondition
 
-A new Flutter package project.
+Synchronous conditional widget renderer.
 
-## Getting Started
+Lets you declaratively render a widget based on a condition, using this you can get rid of
+implicit conditional statements in your code to display/hide a widget.
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+## Usage
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+After following the installation guide, you can use this widget as follow:
+
+```dart
+BuildCondition(
+  condition: true,
+  builder: (context) {
+    return Text('This gets rendered');
+  },
+ )
+
+BuildCondition(
+  condition: false,
+  builder: (context) {
+    return Text('This does not get rendered, an empty Container will be rendered');
+  },
+)
+
+BuildCondition(
+  condition: false,
+  builder: (context) {
+    return Text('This does not get rendered, as fallback is not null, it is used to render the fallback widget.');
+  },
+  fallback: (context) {
+    return Text('This gets rendered');
+  }
+)
+```
