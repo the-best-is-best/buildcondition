@@ -2,10 +2,12 @@ import 'package:buildcondition/buildcondition.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -14,13 +16,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Build Condition Demo Page'),
+      home: const MyHomePage(title: 'Build Condition Demo Page'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -54,8 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: BuildCondition(
           condition: id == id2,
-          builder: (context) => Text("Loaded"),
-          fallback: (context) => CircularProgressIndicator(),
+          builder: (context) => const Text("Loaded"),
+          fallback: (context) => const CircularProgressIndicator(),
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
